@@ -45,7 +45,8 @@ class NewGame2ViewController: UIViewController {
     
     @IBOutlet weak var countDownLabel: UILabel!
     
-
+    @IBOutlet weak var highestScoreLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -188,11 +189,14 @@ class NewGame2ViewController: UIViewController {
         
         if previousRankingDictionary == nil {
             highestScore = currentScore
+            highestScoreLabel.text = String(highestScore)
         
         }else if sortedHighScoreArray[0].value < currentScore {
             highestScore = currentScore
+            highestScoreLabel.text = String(highestScore)
         }else if sortedHighScoreArray[0].value >= currentScore {
             highestScore = sortedHighScoreArray[0].value
+            highestScoreLabel.text = String(highestScore)
         }
     }
     

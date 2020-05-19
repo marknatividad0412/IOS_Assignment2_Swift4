@@ -10,8 +10,8 @@ import UIKit
 
 class HighScoresList {
     var playerName: String
-    var playerScore: Int
-    init(playerName: String, playerScore: Int){
+    var playerScore: Double
+    init(playerName: String, playerScore:Double){
         self.playerName = playerName
         self.playerScore = playerScore
     }
