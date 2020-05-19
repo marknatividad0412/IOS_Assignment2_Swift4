@@ -211,7 +211,7 @@ class NewGame2ViewController: UIViewController {
     func createRandomFrame() -> CGRect{
         
         let randomX = CGFloat(10 + arc4random_uniform(screenWidth - 2 * bubble.radius - 20))
-        let randomY = CGFloat(170 + arc4random_uniform(screenHeight - 2 * bubble.radius - 160))
+        let randomY = CGFloat(175 + arc4random_uniform(screenHeight - 2 * bubble.radius - 180))
         
         return CGRect (x: randomX, y: randomY,
                        width: CGFloat(2 * bubble.radius),
