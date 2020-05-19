@@ -38,7 +38,7 @@ class HighScoresViewController: UIViewController {
                var list: [HighScoresList] = []
            
           for scoreList in sortedHighScoreArray{
-               let player = HighScoresList( playerName: scoreList.key, playerScore: scoreList.value)
+               let player = HighScoresList(playerName: scoreList.key, playerScore: scoreList.value)
                list.append(player)
            }
     
