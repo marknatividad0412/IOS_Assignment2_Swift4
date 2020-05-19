@@ -35,10 +35,11 @@ class HighScoresViewController: UIViewController {
             
             var list: [HighScoresList] = []
         
-        for scoreList in sortedHighScoreArray{
+       /* for scoreList in sortedHighScoreArray{
             let player = HighScoresList( playerName: scoreList.key, playerScore: scoreList.value)
             list.append(player)
         }
+ */
             
             return list;
             
@@ -61,10 +62,11 @@ extension HighScoresViewController:UITableViewDataSource{
     func tableView( _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HighScoresTableViewCell
+        /*
         let list = highScores[indexPath.row]
         cell.playerNameLabel.text = list.playerName;
         cell.playerScoreLabel.text = String(list.playerScore);
-            
+            */
 
         return cell
     }

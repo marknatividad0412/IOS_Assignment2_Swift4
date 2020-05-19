@@ -18,11 +18,11 @@ class NewGame2ViewController: UIViewController {
     var bubbleArray = [Bubble]()
     var countDownSeconds = 4;
     var currentScore:Double = 0;
-    var highestScore:Double = 0;
+    //var highestScore:Double = 0;
     // Assigning user defaults values to variables
     var gameLength:Int = UserDefaults.standard.integer(forKey: "gameLength")
     var bubbles:Int = UserDefaults.standard.integer(forKey: "bubbles")
-    var playerName = UserDefaults.standard.object(forKey: "playerName") as? String
+    var playerName: String = (UserDefaults.standard.object(forKey: "playerName") as? String)!
     // variable for combo points
     var lastBubbleValue:Double = 0
     // for high scores
@@ -61,7 +61,7 @@ class NewGame2ViewController: UIViewController {
             sortedHighScoreArray = rankingDictionary.sorted(by: {$0.value > $1.value})
         }
         
-        //for game timer
+        highestScoreLabel.text = "\(sortedHighScoreArray[0].value)"        //for game timer
         countDownLabel.text = "READY!";
         countDowntimer = Timer.scheduledTimer( timeInterval: 1, target: self, selector: #selector(NewGame2ViewController.countdown), userInfo: nil, repeats: true)
                 
@@ -94,7 +94,7 @@ class NewGame2ViewController: UIViewController {
         if (gameLength == 0){
             gameTimer!.invalidate()
             
-           // checkingHighScoreExistence()
+           checkHighScoreExistence()
             /*
             let destinationView = self.storyboard?.instantiateViewController(withIdentifier: "HighScoresListTableTableViewController") as! HighScoresListTableTableViewController
             self.navigationController?.pushViewController(destinationView, animated: true)
@@ -188,16 +188,15 @@ class NewGame2ViewController: UIViewController {
          = "\(currentScore)"
         
         if previousRankingDictionary == nil {
-            highestScore = currentScore
-            highestScoreLabel.text = String(highestScore)
+            //highestScore = currentScore
+            highestScoreLabel.text = "\(currentScore)"
         
         }else if sortedHighScoreArray[0].value < currentScore {
-            highestScore = currentScore
-            highestScoreLabel.text = String(highestScore)
+            //highestScore = currentScore
+            highestScoreLabel.text = "\(currentScore)"
         }else if sortedHighScoreArray[0].value >= currentScore {
-            highestScore = sortedHighScoreArray[0].value
-            highestScoreLabel.text = String(highestScore)
-        }
+        
+            highestScoreLabel.text = "\(sortedHighScoreArray[0].value)"        }
     }
     
     // isOverlapped function
@@ -227,7 +226,7 @@ class NewGame2ViewController: UIViewController {
     // saveHighScore function
     func saveHighScore(){
         
-        rankingDictionary.updateValue(currentScore,  forKey: "playerName")
+        rankingDictionary.updateValue(currentScore,  forKey: "\(playerName)")
         UserDefaults.standard.set(rankingDictionary, forKey: "ranking")
         }
     
@@ -237,8 +236,8 @@ class NewGame2ViewController: UIViewController {
             saveHighScore()
         }else {
             rankingDictionary = previousRankingDictionary!
-            if rankingDictionary.keys.contains("playerName"){
-                let oldScore = rankingDictionary["playerName"]!
+            if rankingDictionary.keys.contains("\(playerName)"){
+                let oldScore = rankingDictionary["\(playerName)"]!
                 if oldScore < currentScore{
                     saveHighScore()
                 }

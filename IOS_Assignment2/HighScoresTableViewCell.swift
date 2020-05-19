@@ -14,6 +14,7 @@ class HighScoresTableViewCell: UITableViewCell {
     
     @IBOutlet weak var playerNameLabel: UILabel!
     
+    
     @IBOutlet weak var playerScoreLabel: UILabel!
     
     
