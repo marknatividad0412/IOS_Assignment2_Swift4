@@ -231,7 +231,7 @@
                                 <rect key="frame" x="0.0" y="108" width="375" height="359"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HighScoresList" rowHeight="102" id="QZS-jj-6jJ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HighScoresList" rowHeight="102" id="QZS-jj-6jJ" customClass="HighScoresTableViewCell" customModule="IOS_Assignment2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="102"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QZS-jj-6jJ" id="oyJ-qB-fYg">
@@ -259,6 +259,10 @@
                                                 <constraint firstItem="9dN-Eg-G8C" firstAttribute="leading" secondItem="VSC-nC-nTJ" secondAttribute="trailing" constant="76" id="rLC-He-eni"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="playerNameLabel" destination="VSC-nC-nTJ" id="nGu-sp-xyC"/>
+                                            <outlet property="playerScoreLabel" destination="9dN-Eg-G8C" id="tzp-wb-zrS"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

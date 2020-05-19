@@ -10,6 +10,13 @@ import UIKit
 
 class HighScoresTableViewCell: UITableViewCell {
 
+    
+    
+    @IBOutlet weak var playerNameLabel: UILabel!
+    
+    @IBOutlet weak var playerScoreLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
