@@ -231,12 +231,33 @@
                                 <rect key="frame" x="0.0" y="108" width="375" height="359"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HighScoresList" id="QZS-jj-6jJ">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HighScoresList" rowHeight="102" id="QZS-jj-6jJ">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="102"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QZS-jj-6jJ" id="oyJ-qB-fYg">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="102"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PlayerName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSC-nC-nTJ">
+                                                    <rect key="frame" x="58" y="40.5" width="92" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dN-Eg-G8C">
+                                                    <rect key="frame" x="226" y="40.5" width="45" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="VSC-nC-nTJ" firstAttribute="centerY" secondItem="oyJ-qB-fYg" secondAttribute="centerY" id="4zK-AF-kjt"/>
+                                                <constraint firstItem="VSC-nC-nTJ" firstAttribute="left" secondItem="oyJ-qB-fYg" secondAttribute="left" constant="58" id="AoP-a9-xrJ"/>
+                                                <constraint firstItem="9dN-Eg-G8C" firstAttribute="centerY" secondItem="oyJ-qB-fYg" secondAttribute="centerY" id="HTT-rf-sjT"/>
+                                                <constraint firstAttribute="trailing" secondItem="9dN-Eg-G8C" secondAttribute="trailing" constant="104" id="cBO-vd-8aK"/>
+                                                <constraint firstItem="9dN-Eg-G8C" firstAttribute="leading" secondItem="VSC-nC-nTJ" secondAttribute="trailing" constant="76" id="rLC-He-eni"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
