@@ -11,6 +11,7 @@
 		44089C8C246F84490078BB8E /* NewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44089C8B246F84490078BB8E /* NewGameViewController.swift */; };
 		44089C8E246F84760078BB8E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44089C8D246F84760078BB8E /* SettingsViewController.swift */; };
 		4408F62D247146F100022524 /* HighScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4408F62C247146F100022524 /* HighScoresViewController.swift */; };
+		440A8BF424736F930021339C /* HighScoresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440A8BF324736F930021339C /* HighScoresTableViewCell.swift */; };
 		440C3613246FBBE000D241A9 /* Bubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440C3612246FBBE000D241A9 /* Bubble.swift */; };
 		442B8B8D2470BC0000C1E82A /* NewGame2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442B8B8C2470BC0000C1E82A /* NewGame2ViewController.swift */; };
 		44F42AB9246DED100025F020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F42AB8246DED100025F020 /* AppDelegate.swift */; };
@@ -45,6 +46,7 @@
 		44089C8B246F84490078BB8E /* NewGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameViewController.swift; sourceTree = "<group>"; };
 		44089C8D246F84760078BB8E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4408F62C247146F100022524 /* HighScoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoresViewController.swift; sourceTree = "<group>"; };
+		440A8BF324736F930021339C /* HighScoresTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoresTableViewCell.swift; sourceTree = "<group>"; };
 		440C3612246FBBE000D241A9 /* Bubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bubble.swift; sourceTree = "<group>"; };
 		442B8B8C2470BC0000C1E82A /* NewGame2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGame2ViewController.swift; sourceTree = "<group>"; };
 		44F42AB5246DED100025F020 /* IOS_Assignment2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOS_Assignment2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +126,7 @@
 				44F42AC6246DED110025F020 /* Info.plist */,
 				44089C89246F81AD0078BB8E /* MainNavigationContoller.swift */,
 				440C3612246FBBE000D241A9 /* Bubble.swift */,
+				440A8BF324736F930021339C /* HighScoresTableViewCell.swift */,
 			);
 			path = IOS_Assignment2;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				44089C8C246F84490078BB8E /* NewGameViewController.swift in Sources */,
 				44F42ABB246DED100025F020 /* SceneDelegate.swift in Sources */,
 				44089C8A246F81AD0078BB8E /* MainNavigationContoller.swift in Sources */,
+				440A8BF424736F930021339C /* HighScoresTableViewCell.swift in Sources */,
 				44089C8E246F84760078BB8E /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
