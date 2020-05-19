@@ -13,6 +13,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var playerNameLabel: UILabel!
     
+    @IBAction func exitButton(_ sender: UIButton) {
+        exit(0);
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

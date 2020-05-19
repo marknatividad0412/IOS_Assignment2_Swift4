@@ -13,8 +13,10 @@ class NewGame2ViewController: UIViewController {
 
     // declaring variables
     var gameTimer: Timer?
+    var countDowntimer = Timer();
     var bubble = Bubble()
     var bubbleArray = [Bubble]()
+    var countDownSeconds = 4;
     var currentScore:Double = 0;
     var highestScore:Double = 0;
     // Assigning user defaults values to variables
@@ -41,11 +43,14 @@ class NewGame2ViewController: UIViewController {
     
     @IBOutlet weak var currenScoreLabel: UILabel!
     
+    @IBOutlet weak var countDownLabel: UILabel!
     
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        gameTimeLabel.text = "\(gameLength)"
         
         currenScoreLabel.text = "0";
         // for comparing current score with highest score
@@ -56,18 +61,28 @@ class NewGame2ViewController: UIViewController {
         }
         
         //for game timer
-        
-        gameTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true){
-            timer in
-            self.setRemainingTime()
-            self.removeBubble()
-            self.createBubble()
-        }
+        countDownLabel.text = "READY!";
+        countDowntimer = Timer.scheduledTimer( timeInterval: 1, target: self, selector: #selector(NewGame2ViewController.countdown), userInfo: nil, repeats: true)
+                
         
             // Do any additional setup after loading the view.
     }
-    
-    // setRemainingTime function
+    @objc func countdown() {
+        countDownLabel.text = "READY!";
+        countDownSeconds -= 1
+        countDownLabel.text = String(countDownSeconds)
+        if (countDownSeconds == 0){
+            countDowntimer.invalidate()
+            countDownLabel.text = "START!"
+            countDownLabel.text = ""
+            gameTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true){
+                timer in
+                self.setRemainingTime()
+                self.removeBubble()
+                self.createBubble()
+            }
+        }
+    }    // setRemainingTime function
     
     @objc func setRemainingTime(){
         

@@ -31,9 +31,12 @@ class NewGameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    countDownLabel.text = "READY!";        countDowntimer = Timer.scheduledTimer( timeInterval: 1, target: self, selector: #selector(NewGameViewController.countdown), userInfo: nil, repeats: true)
+    countDownLabel.text = "READY!";
+        countDowntimer = Timer.scheduledTimer( timeInterval: 1, target: self, selector: #selector(NewGameViewController.countdown), userInfo: nil, repeats: true)
         gameTimer = Timer.scheduledTimer( timeInterval: 1, target: self, selector: #selector(NewGameViewController.gameTimeTimer), userInfo: nil, repeats: true)
-        timeLabel.text = String(gameLength)     }
+        timeLabel.text = String(gameLength)
+        
+    }
     
     @objc func countdown() {
         countDownLabel.text = "READY!";    countdownSeconds -= 1
