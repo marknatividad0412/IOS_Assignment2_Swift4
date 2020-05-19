@@ -39,6 +39,7 @@ class NewGame2ViewController: UIViewController {
     
     // connected views
     
+    @IBOutlet weak var comboLabel: UILabel!
     @IBOutlet weak var gameTimeLabel: UILabel!
     
     @IBOutlet weak var currenScoreLabel: UILabel!
@@ -52,8 +53,8 @@ class NewGame2ViewController: UIViewController {
         super.viewDidLoad()
         
         gameTimeLabel.text = "\(gameLength)"
-        
         currenScoreLabel.text = "0";
+        comboLabel.text = "";
         // for comparing current score with highest score
        previousRankingDictionary = UserDefaults.standard.dictionary(forKey: "ranking") as? Dictionary<String,Double>
         if previousRankingDictionary != nil{
@@ -178,15 +179,18 @@ class NewGame2ViewController: UIViewController {
         //for combo points
         if lastBubbleValue == bubbleClicked.value{
             currentScore += bubbleClicked.value * 1.5
-            
+            comboLabel.text = String("+(\(bubbleClicked.value) x 1.5)")
+            comboLabel.textColor = UIColor.red
         }
         else {
             currentScore += bubbleClicked.value
-        }
+            comboLabel.text = String("+(\(bubbleClicked.value) x 1.0)")
+            comboLabel.textColor = UIColor.blue        }
         lastBubbleValue = bubbleClicked.value
         currenScoreLabel.text
          = "\(currentScore)"
-        
+        comboLabel.text = String("+(\(bubbleClicked.value) x 1.0)")
+        comboLabel.textColor = UIColor.blue
         if previousRankingDictionary == nil {
             //highestScore = currentScore
             highestScoreLabel.text = "\(currentScore)"
