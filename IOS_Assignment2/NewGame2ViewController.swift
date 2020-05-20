@@ -42,6 +42,7 @@ class NewGame2ViewController: UIViewController {
     @IBOutlet weak var comboLabel: UILabel!
     @IBOutlet weak var gameTimeLabel: UILabel!
     
+    @IBOutlet weak var highestScorePlayerLabel: UILabel!
     @IBOutlet weak var currenScoreLabel: UILabel!
     
     @IBOutlet weak var countDownLabel: UILabel!
@@ -62,8 +63,9 @@ class NewGame2ViewController: UIViewController {
             sortedHighScoreArray = rankingDictionary.sorted(by: {$0.value > $1.value})
             highestScoreLabel.text = "\(sortedHighScoreArray[0].value)"
             
-        }else{
-            highestScoreLabel.text = "None"
+            highestScorePlayerLabel.text = "\(sortedHighScoreArray[0].key)"        }else{
+            highestScoreLabel.text = "0"
+            highestScorePlayerLabel.text = ""
         }
         
         //for game timer
@@ -202,9 +204,14 @@ class NewGame2ViewController: UIViewController {
         }else if sortedHighScoreArray[0].value < currentScore {
             //highestScore = currentScore
             highestScoreLabel.text = "\(currentScore)"
-        }else if sortedHighScoreArray[0].value >= currentScore {
-        
-            highestScoreLabel.text = "\(sortedHighScoreArray[0].value)"        }
+        }else if sortedHighScoreArray[0].value >= currentScore
+        {
+            
+            highestScoreLabel.text = "\(sortedHighScoreArray[0].value)"
+            highestScorePlayerLabel.text = "\(playerName)"
+            //highestScorePlayerLabel.textColor = UIColor.red
+            highestScorePlayerLabel.font.withSize(  20)
+        }
     }
     
     // isOverlapped function
