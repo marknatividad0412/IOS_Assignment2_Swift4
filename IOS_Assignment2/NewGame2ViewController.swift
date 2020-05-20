@@ -56,11 +56,14 @@ class NewGame2ViewController: UIViewController {
         gameTimeLabel.text = "\(gameLength)"
         currenScoreLabel.text = "0";
         comboLabel.text = "";
+        
         // for comparing current score with highest score
        previousRankingDictionary = UserDefaults.standard.dictionary(forKey: "ranking") as? Dictionary<String,Double>
         if previousRankingDictionary != nil{
             rankingDictionary = previousRankingDictionary!
             sortedHighScoreArray = rankingDictionary.sorted(by: {$0.value > $1.value})
+            
+            // checking for the highest player label
             highestScoreLabel.text = "\(sortedHighScoreArray[0].value)"
             
             highestScorePlayerLabel.text = "\(sortedHighScoreArray[0].key)"        }else{
@@ -204,13 +207,23 @@ class NewGame2ViewController: UIViewController {
         }else if sortedHighScoreArray[0].value < currentScore {
             //highestScore = currentScore
             highestScoreLabel.text = "\(currentScore)"
-        }else if sortedHighScoreArray[0].value >= currentScore
+        }
+        else if sortedHighScoreArray[0].value >= currentScore
         {
             
-            highestScoreLabel.text = "\(sortedHighScoreArray[0].value)"
-            highestScorePlayerLabel.text = "\(playerName)"
-            //highestScorePlayerLabel.textColor = UIColor.red
-            highestScorePlayerLabel.font.withSize(  20)
+            highestScoreLabel.text = "\(sortedHighScoreArray[0].value)";
+           /*            var high = true;
+            if high == true{
+                
+            
+           highestScorePlayerLabel.text = "\(playerName)"
+            highestScorePlayerLabel.textColor = UIColor.red
+            
+            }
+             high = false; //highestScorePlayerLabel.font.withSize(  20)
+ */
+        }else{
+            
         }
     }
     

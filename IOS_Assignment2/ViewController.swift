@@ -7,21 +7,40 @@
 //
 
 import UIKit
+import Foundation
+
+
 
 class ViewController: UIViewController {
 
     
     @IBOutlet weak var playerNameLabel: UILabel!
     
+    @IBAction func resetAllButton(_ sender: Any) {
+        
+        
+        
+        
+       
+              
+    }
+    
     @IBAction func exitButton(_ sender: UIButton) {
-        exit(0);
+        let alert = UIAlertController(title: "WARNING!", message: "Are you sure you want to exit the game?", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+           
+            exit(0);
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+
+        self.present(alert, animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        playerNameLabel.text = UserDefaults.standard.object(forKey: "playerName") as? String
-        // Do any additional setup after loading the view.
+         playerNameLabel.text = UserDefaults.standard.object(forKey: "playerName") as? String
         
     }
 
