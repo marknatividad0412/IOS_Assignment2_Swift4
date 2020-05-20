@@ -22,7 +22,7 @@ class NewGame2ViewController: UIViewController {
     // Assigning user defaults values to variables
     var gameLength:Int = UserDefaults.standard.integer(forKey: "gameLength")
     var bubbles:Int = UserDefaults.standard.integer(forKey: "bubbles")
-    var playerName: String = (UserDefaults.standard.object(forKey: "playerName") as? String)!
+    var playerName: String = (UserDefaults.standard.string(forKey: "playerName") ?? "No Name")
     // variable for combo points
     var lastBubbleValue:Double = 0
     // for high scores
@@ -60,9 +60,13 @@ class NewGame2ViewController: UIViewController {
         if previousRankingDictionary != nil{
             rankingDictionary = previousRankingDictionary!
             sortedHighScoreArray = rankingDictionary.sorted(by: {$0.value > $1.value})
+            highestScoreLabel.text = "\(sortedHighScoreArray[0].value)"
+            
+        }else{
+            highestScoreLabel.text = "None"
         }
         
-        highestScoreLabel.text = "\(sortedHighScoreArray[0].value)"        //for game timer
+        //for game timer
         countDownLabel.text = "READY!";
         countDowntimer = Timer.scheduledTimer( timeInterval: 1, target: self, selector: #selector(NewGame2ViewController.countdown), userInfo: nil, repeats: true)
                 
