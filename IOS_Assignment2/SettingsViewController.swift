@@ -12,7 +12,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate{
     
     var gameLength:Int = 30;
     var bubbles:Int = 15;
-         let settingsDefaults = UserDefaults.standard
+    let settingsDefaults = UserDefaults.standard
     @IBOutlet weak var playerNameTextField: UITextField!
     
     @IBAction func gameLengthSlider(_ sender: UISlider) {
@@ -32,6 +32,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate{
     
     
     @IBAction func saveButton(_ sender: UIButton) {
+        // saving the user defaults
        settingsDefaults.set(playerNameTextField.text, forKey: "playerName")
         settingsDefaults.set(gameLengthLabel.text, forKey: "gameLength")
         

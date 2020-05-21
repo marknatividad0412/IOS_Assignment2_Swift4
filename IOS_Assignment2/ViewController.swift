@@ -26,10 +26,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func exitButton(_ sender: UIButton) {
+        // for showing alert button
         let alert = UIAlertController(title: "WARNING!", message: "Are you sure you want to exit the game?", preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
-           
+           // foe exiting the game
             exit(0);
         }))
         alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))

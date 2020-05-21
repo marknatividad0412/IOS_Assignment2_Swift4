@@ -22,8 +22,9 @@ class HighScoresViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.delegate = self
-        
         tableView.dataSource = self
+        
+        // for loading data from the ranking dictionary to the sorted array
         previousRankingDictionary = UserDefaults.standard.dictionary(forKey: "ranking") as? Dictionary<String,Double>
         if previousRankingDictionary != nil{
             rankingDictionary = previousRankingDictionary!
@@ -33,6 +34,9 @@ class HighScoresViewController: UIViewController {
         // Do any additional setup after loading the view.
        
     }
+    
+    // putting data from the sorted array
+    
      func loadHighScores() -> [HighScoresList]{
                
                var list: [HighScoresList] = []
@@ -61,7 +65,7 @@ extension HighScoresViewController:UITableViewDataSource{
     func tableView( _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HighScoresTableViewCell
-        
+        // adding data to every row
         let list = highScores[indexPath.row]
         cell.playerNameLabel.text = list.playerName;
         cell.playerScoreLabel.text = String(list.playerScore);

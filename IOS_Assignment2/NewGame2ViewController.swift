@@ -67,17 +67,20 @@ class NewGame2ViewController: UIViewController {
             highestScoreLabel.text = "\(sortedHighScoreArray[0].value)"
             
             highestScorePlayerLabel.text = "\(sortedHighScoreArray[0].key)"        }else{
+            
+            // for setting labels to default
             highestScoreLabel.text = "0"
             highestScorePlayerLabel.text = ""
         }
         
-        //for game timer
+        //for count downtimer
         countDownLabel.text = "READY!";
         countDowntimer = Timer.scheduledTimer( timeInterval: 1, target: self, selector: #selector(NewGame2ViewController.countdown), userInfo: nil, repeats: true)
                 
         
             // Do any additional setup after loading the view.
     }
+    // function for game countdown timer
     @objc func countdown() {
         countDownLabel.text = "READY!";
         countDownSeconds -= 1
@@ -86,6 +89,8 @@ class NewGame2ViewController: UIViewController {
             countDowntimer.invalidate()
             countDownLabel.text = "START!"
             countDownLabel.text = ""
+            
+            // for game length timer
             gameTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true){
                 timer in
                 self.setRemainingTime()
@@ -105,11 +110,7 @@ class NewGame2ViewController: UIViewController {
             gameTimer!.invalidate()
             
            checkHighScoreExistence()
-            /*
-            let destinationView = self.storyboard?.instantiateViewController(withIdentifier: "HighScoresListTableTableViewController") as! HighScoresListTableTableViewController
-            self.navigationController?.pushViewController(destinationView, animated: true)
-            present(destinationView, animated:  true, completion: nil)
-            */
+            // showing the high score view after the game
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle:  nil)
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HighScoresViewController") as! HighScoresViewController
             self.present(nextViewController, animated: true, completion: nil)
@@ -159,7 +160,12 @@ class NewGame2ViewController: UIViewController {
             // set the bubble position
             
             bubble.frame = createRandomFrame()
-            bubble.layer.cornerRadius = bubble.frame.height/2            // for frame overlap checking
+            
+            // for making the buttons(bubbles) round
+            bubble.layer.cornerRadius = bubble.frame.height/2
+            
+            
+            // for frame overlap checking
             
             if !isOverlapped(newBubble:  bubble){
                 
@@ -199,6 +205,7 @@ class NewGame2ViewController: UIViewController {
         currenScoreLabel.text
          = "\(currentScore)"
         
+        // setting the highschore label fater comparing with the current score
         if previousRankingDictionary == nil {
             
             highestScoreLabel.text = "\(currentScore)"
@@ -211,9 +218,7 @@ class NewGame2ViewController: UIViewController {
         {
             
             highestScoreLabel.text = "\(sortedHighScoreArray[0].value)"
-           //highestScorePlayerLabel.text = "\(playerName)"
-           // highestScorePlayerLabel.textColor = UIColor.red
-            //highestScorePlayerLabel.font.withSize(  20)
+           
  
         }
             
