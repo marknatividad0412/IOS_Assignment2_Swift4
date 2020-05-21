@@ -80,6 +80,7 @@
                             <constraint firstItem="3tk-S1-3qt" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="nea-gP-DRq" secondAttribute="trailing" constant="102" id="CMb-P8-XPZ"/>
                             <constraint firstItem="3tk-S1-3qt" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="n7v-bX-fUI" secondAttribute="trailing" constant="132" id="Hkb-PY-qh8"/>
                             <constraint firstItem="9wh-ta-cfZ" firstAttribute="top" secondItem="IJH-t7-Pkw" secondAttribute="bottom" constant="8" id="Hnf-PW-VFZ"/>
+                            <constraint firstItem="zzY-5V-rXV" firstAttribute="centerX" secondItem="peg-kf-Wal" secondAttribute="centerX" id="JQ8-pp-hfY"/>
                             <constraint firstItem="peg-kf-Wal" firstAttribute="leading" relation="lessThanOrEqual" secondItem="3tk-S1-3qt" secondAttribute="leading" constant="30" id="OTu-3w-p1m"/>
                             <constraint firstItem="n7v-bX-fUI" firstAttribute="leading" secondItem="9wh-ta-cfZ" secondAttribute="trailing" constant="103" id="UqA-Ap-CyX"/>
                             <constraint firstItem="zzY-5V-rXV" firstAttribute="top" secondItem="peg-kf-Wal" secondAttribute="bottom" constant="8" id="UuL-yp-s9G"/>
@@ -496,6 +497,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dcR-vU-18L"/>
+        <segue reference="jvR-Zc-AdD"/>
     </inferredMetricsTieBreakers>
 </document>

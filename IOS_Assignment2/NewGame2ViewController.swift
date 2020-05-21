@@ -184,7 +184,7 @@ class NewGame2ViewController: UIViewController {
     @IBAction func bubbleTapped(_ bubbleClicked: Bubble){
         
         bubbleClicked.removeFromSuperview()
-        
+         
         //for combo points
         if lastBubbleValue == bubbleClicked.value{
             currentScore += bubbleClicked.value * 1.5
@@ -198,33 +198,26 @@ class NewGame2ViewController: UIViewController {
         lastBubbleValue = bubbleClicked.value
         currenScoreLabel.text
          = "\(currentScore)"
-        comboLabel.text = String("+(\(bubbleClicked.value) x 1.0)")
-        comboLabel.textColor = UIColor.blue
+        
         if previousRankingDictionary == nil {
-            //highestScore = currentScore
+            
             highestScoreLabel.text = "\(currentScore)"
         
         }else if sortedHighScoreArray[0].value < currentScore {
-            //highestScore = currentScore
+            
             highestScoreLabel.text = "\(currentScore)"
         }
         else if sortedHighScoreArray[0].value >= currentScore
         {
             
-            highestScoreLabel.text = "\(sortedHighScoreArray[0].value)";
-           /*            var high = true;
-            if high == true{
-                
-            
-           highestScorePlayerLabel.text = "\(playerName)"
-            highestScorePlayerLabel.textColor = UIColor.red
-            
-            }
-             high = false; //highestScorePlayerLabel.font.withSize(  20)
- */
-        }else{
-            
+            highestScoreLabel.text = "\(sortedHighScoreArray[0].value)"
+           //highestScorePlayerLabel.text = "\(playerName)"
+           // highestScorePlayerLabel.textColor = UIColor.red
+            //highestScorePlayerLabel.font.withSize(  20)
+ 
         }
+            
+        
     }
     
     // isOverlapped function
